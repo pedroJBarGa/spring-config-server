@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  # Spring Cloud Config Server Repository
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        enabled: true
+        git:
+          uri: https://github.com/pedroJBarGa/spring-cloud-config-repo.git
+          clone-on-start: true
+          default-label: main
+
+
+  # Spring properties in case you use different profiles
+  profiles:
+    active: dev
+
+management:
+  security:
+    enabled: false
